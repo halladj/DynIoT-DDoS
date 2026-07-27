@@ -16,6 +16,9 @@ authors:
     given-names: Gregorio
     affiliation: "University of Castilla-La Mancha, Albacete, Spain"
 license: CC-BY-4.0
+doi: 10.5281/zenodo.21627584
+repository-code: "https://github.com/halladj/DynIoT-DDoS"
+version: 1.0.0
 keywords:
   - Internet of Mobile Things
   - DDoS detection

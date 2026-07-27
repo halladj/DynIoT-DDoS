@@ -1,5 +1,9 @@
 # DynIoT-DDoS
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21627584.svg)](https://doi.org/10.5281/zenodo.21627584)
+[![Data licence: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Code licence: MIT](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE-CODE)
+
 A **mobility-aware, multi-attack DDoS detection dataset** for Smart City IoT, generated with NS-3.
 
 Unlike existing IoT intrusion-detection benchmarks, which record traffic from **stationary**
@@ -131,7 +135,24 @@ see the *Releases* page for the version pinned to this dataset.
 
 ## Citation
 
-If you use this dataset, please cite the accompanying paper (see `CITATION.cff`):
+Cite the dataset via its **concept DOI**, which always resolves to the newest version:
+
+> Halladj, H., Saïdouni, D. E., Maati, B., & Díaz, G. (2026). *DynIoT-DDoS: a mobility-aware,
+> multi-attack DDoS detection dataset for Smart City IoT* [Data set]. Zenodo.
+> https://doi.org/10.5281/zenodo.21627584
+
+```bibtex
+@dataset{halladj2026dyniotddos,
+  author    = {Halladj, Hamza and Sa\"{i}douni, Djamel Eddine and Maati, Bouchera and D\'{i}az, Gregorio},
+  title     = {{DynIoT-DDoS}: a mobility-aware, multi-attack {DDoS} detection dataset for {Smart City IoT}},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21627584},
+  url       = {https://doi.org/10.5281/zenodo.21627584}
+}
+```
+
+Please also cite the accompanying paper (see `CITATION.cff`):
 
 > H. Halladj, D. E. Saïdouni, B. Maati, and G. Díaz, "DynIoT-DDoS: A Framework for Constructing
 > Benchmark Datasets for DDoS Attack Detection in Dynamic Environments." *(under review)*
