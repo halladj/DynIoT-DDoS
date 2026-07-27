@@ -1,0 +1,38 @@
+{
+  "title": "DynIoT-DDoS: a mobility-aware, multi-attack DDoS detection dataset for Smart City IoT",
+  "upload_type": "dataset",
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "description": "<p>DynIoT-DDoS is a mobility-aware benchmark dataset for DDoS detection in Smart City IoT, generated with the NS-3 network simulator (v3.43).</p><p>Unlike existing IoT intrusion-detection benchmarks, which record traffic from <strong>stationary</strong> topologies, DynIoT-DDoS captures a mobile IoT agent traversing a spatially heterogeneous field of 61 fixed nodes. As the agent moves, its neighbour count, and therefore its legitimate traffic, rises and falls continuously. Attacks are <strong>context-triggered</strong>: each malicious node transmits only while the mobile agent is inside its 20&nbsp;m radio range, so adversarial traffic co-occurs with the legitimate, mobility-induced surge. This operationalises the <em>flash-crowd ambiguity</em> for a node in motion.</p><p><strong>Contents.</strong> A per-second time-series view of 11,084 labelled samples (18 columns) spanning 184 scenarios, balanced across four context-triggered attack types (UDP, TCP and ICMP floods, and MAC-layer channel jamming; 46 scenarios each). Scenario grid: start offset d &isin; {0, 20, 40}&nbsp;m, movement angle &alpha; in 15&deg; steps, attacker count n &isin; {1, 3, 5}, along-path spacing s &isin; {8, 24}&nbsp;m. Features comprise four spatial-context attributes (position, movement angle, start offset, instantaneous node density) and four network-activity counters measured on the mobile agent's own interface, plus two oracle columns that document label derivation and must be excluded from training.</p><p><strong>Evaluation note.</strong> Rows within a scenario are temporally autocorrelated; always group by <code>Scenario_ID</code> (e.g. scikit-learn <code>GroupKFold</code>). A random row-wise split leaks near-duplicate rows into the test set and inflates scores.</p><p><strong>Caveats.</strong> Simulation-based, not validated against physical testbeds. The 72% attack prevalence follows from deliberate on-path attacker placement and represents a worst-case adversarial workload rather than a deployment-typical base rate. A single density-gradient topology and straight-line, constant-speed trajectories are used. Physical layer is IEEE 802.11n ad hoc (IBSS) only.</p><p>A reproduction script is included that regenerates the reference detection and ablation results under leakage-free, scenario-grouped 5-fold cross-validation.</p>",
+  "creators": [
+    {
+      "name": "Halladj, Hamza",
+      "affiliation": "MISC Laboratory, University Constantine 2 - Abdelhamid Mehri, Constantine, Algeria"
+    },
+    {
+      "name": "Saïdouni, Djamel Eddine",
+      "affiliation": "University Constantine 2 - Abdelhamid Mehri, Constantine, Algeria"
+    },
+    {
+      "name": "Maati, Bouchera",
+      "affiliation": "Faculty of Sciences, Ferhat Abbas University Setif 1, Setif, Algeria"
+    },
+    {
+      "name": "Díaz, Gregorio",
+      "affiliation": "School of Computer Science, University of Castilla-La Mancha, Albacete, Spain"
+    }
+  ],
+  "keywords": [
+    "Internet of Mobile Things",
+    "IoMT",
+    "DDoS detection",
+    "intrusion detection dataset",
+    "Smart City",
+    "NS-3",
+    "network simulation",
+    "mobility",
+    "machine learning benchmark",
+    "network security"
+  ]
+}
