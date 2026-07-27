@@ -18,10 +18,14 @@ mobility-induced surge. This operationalises the *flash-crowd ambiguity* for a n
 | Path | Description |
 |---|---|
 | `data/dyniot_ddos_timeseries.csv.gz` | Per-second time-series view — **11,084 rows × 18 columns** |
+| `data/dyniot_ddos_flow.csv.gz` | Per-flow view — **795,683 records × 14 columns** |
 | `scripts/reproduce_paper_results.py` | Reproduces the paper's detection + ablation results |
 
-> **Flow-level view** (795,683 records × 14 columns, CICFlowMeter-style per-flow features) is
-> published alongside the archived release — see *Releases*.
+Both views derive from the **same 184 simulation runs**, so they can be joined or compared on
+identical underlying traffic.
+
+**Generation code:** the NS-3 framework that produced this dataset lives at
+**[halladj/simulation-scripts](https://github.com/halladj/simulation-scripts)**.
 
 ## Dataset at a glance
 
@@ -128,10 +132,32 @@ Removing `Mobile_X_Pos` still beats network-only (+0.7 / +1.0 / +1.3 pp), so the
   half-open (SYN) variants are absent.
 - **802.11n only** — no LoRa, NB-IoT, or BLE.
 
+## Flow-level schema
+
+`data/dyniot_ddos_flow.csv.gz` — one row per unique network flow, following the CICFlowMeter
+feature set used by CIC-IDS2017 and IoTID20 for compatibility with existing IDS pipelines.
+
+| Group | Columns |
+|---|---|
+| Identifiers (4) | `Flow_ID`, `Src_IP`, `Dst_IP`, `Protocol` |
+| Flow statistics (10) | `Flow_Duration`, `Tot_Fwd_Pkts`, `Tot_Bwd_Pkts`, `TotLen_Fwd_Bytes`, `TotLen_Bwd_Bytes`, `Flow_Bytes_s`, `Flow_Pkts_s`, `Mean_Delay`, `Mean_Jitter`, `Lost_Packets` |
+
+During attack windows the high-throughput flood flows appear alongside the legitimate low-rate
+collaboration flows; `Mean_Delay` / `Mean_Jitter` capture the queuing interference the flood
+imposes on co-located benign traffic.
+
 ## Generation code
 
-Produced with an NS-3 3.43 framework (Python bindings). The generator is released separately;
-see the *Releases* page for the version pinned to this dataset.
+Produced with an NS-3 3.43 framework (Python bindings), available at
+**[halladj/simulation-scripts](https://github.com/halladj/simulation-scripts)**. Reproduce the
+full scenario grid with:
+
+```bash
+make validate ATTACK_TYPES="udp_flood tcp_flood icmp_flood jamming" JOBS=18
+```
+
+Note that 116 of the 300 attempted grid points are geometrically infeasible (too many attackers
+for the available on-path span) and are skipped by design, leaving the 184 completed scenarios.
 
 ## Citation
 
