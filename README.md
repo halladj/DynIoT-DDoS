@@ -163,6 +163,12 @@ for the available on-path span) and are skipped by design, leaving the 184 compl
 
 Cite the dataset via its **concept DOI**, which always resolves to the newest version:
 
+| Version | DOI |
+|---|---|
+| **All versions (cite this)** | [10.5281/zenodo.21627584](https://doi.org/10.5281/zenodo.21627584) |
+| v1.1.0 — time-series + flow | [10.5281/zenodo.21628669](https://doi.org/10.5281/zenodo.21628669) |
+| v1.0.0 — time-series only | [10.5281/zenodo.21627585](https://doi.org/10.5281/zenodo.21627585) |
+
 > Halladj, H., Saïdouni, D. E., Maati, B., & Díaz, G. (2026). *DynIoT-DDoS: a mobility-aware,
 > multi-attack DDoS detection dataset for Smart City IoT* [Data set]. Zenodo.
 > https://doi.org/10.5281/zenodo.21627584
