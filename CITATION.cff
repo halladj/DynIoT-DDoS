@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: "DynIoT-DDoS: a mobility-aware, multi-attack DDoS detection dataset for Smart City IoT"
+message: "If you use this dataset, please cite both the dataset and the accompanying paper."
+type: dataset
+authors:
+  - family-names: Halladj
+    given-names: Hamza
+    affiliation: "MISC Laboratory, University Constantine 2 - Abdelhamid Mehri, Algeria"
+  - family-names: Saïdouni
+    given-names: Djamel Eddine
+    affiliation: "University Constantine 2 - Abdelhamid Mehri, Algeria"
+  - family-names: Maati
+    given-names: Bouchera
+    affiliation: "Ferhat Abbas University Setif 1, Algeria"
+  - family-names: Díaz
+    given-names: Gregorio
+    affiliation: "University of Castilla-La Mancha, Albacete, Spain"
+license: CC-BY-4.0
+keywords:
+  - Internet of Mobile Things
+  - DDoS detection
+  - intrusion detection dataset
+  - Smart City
+  - NS-3
+  - network simulation
+  - mobility
+preferred-citation:
+  type: article
+  title: "DynIoT-DDoS: A Framework for Constructing Benchmark Datasets for DDoS Attack Detection in Dynamic Environments"
+  status: submitted
+  year: 2026
+  authors:
+    - family-names: Halladj
+      given-names: Hamza
+    - family-names: Saïdouni
+      given-names: Djamel Eddine
+    - family-names: Maati
+      given-names: Bouchera
+    - family-names: Díaz
+      given-names: Gregorio
